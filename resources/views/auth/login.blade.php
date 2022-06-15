@@ -2,7 +2,8 @@
 
 @section('content')
 
-{!! Form::open(['action' => 'Auth\LoginController@login' ]) !!}
+{!! Form::open(['action' => 'Auth\LoginController@login' , 'method' => 'post']) !!}
+
 
 <p>AtlasSNSへようこそ</p>
 
@@ -14,6 +15,7 @@
 {{ Form::submit('ログイン') }}
 
 <p><a href="/register">新規ユーザーの方はこちら</a></p>
+@csrf
 
 {!! Form::close() !!}
 

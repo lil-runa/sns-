@@ -11,7 +11,7 @@
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
-    <link rel="icon" href="画像URL" sizes="16x16" type="image/png" />
+    <link rel="icon" href="http://127.0.0.1:8000/top" sizes="16x16" type="image/png" />
     <link rel="icon" href="画像URL" sizes="32x32" type="image/png" />
     <link rel="icon" href="画像URL" sizes="48x48" type="image/png" />
     <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
@@ -22,15 +22,18 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
+        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
+            <div id="user">
+                <div id="user-name">
+                    <p>{{ Auth::user()->username }}さん<img src="images/arrow.png"></p>
+                <div  class=accordion class="accordion-container">
+                    <h4 class="accordion-title js-accordion-title">{{ Auth::user()->username }}さん</h4>
+                        <div class=accordion-content>
                 <ul>
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
+                        </div>
                 </ul>
             </div>
         </div>
@@ -41,7 +44,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
@@ -58,7 +61,7 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

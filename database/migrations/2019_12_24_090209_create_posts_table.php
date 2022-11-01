@@ -14,11 +14,11 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('user_id');
+            $table->increments('id')->autoIncrement();
+            $table->unsignedBigInteger('user_id');
             $table->string('post',400);
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw('current_timestamp on update current_timestamp'));
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

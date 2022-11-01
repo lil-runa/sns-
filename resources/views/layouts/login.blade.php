@@ -20,23 +20,21 @@
     <!--OGPタグ/twitterカード-->
 </head>
 <body>
-    <header>
-        <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
+    <header class="header">
+        <h1><a href="/top" class=atlas><img src="images/atlas.png" class=atlas-icon></a></h1>
             <div id="user">
-                <div id="user-name">
-                    <p>{{ Auth::user()->username }}さん<img src="images/arrow.png"></p>
                 <div  class=accordion class="accordion-container">
-                    <h4 class="accordion-title js-accordion-title">{{ Auth::user()->username }}さん</h4>
-                        <div class=accordion-content>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                        </div>
-                </ul>
+                    <h4 class="accordion-title js-accordion-title"><p class=username>{{ Auth::user()->username }}さん</p></h4>
+                    <div class=accordion-content>
+                        <ul>
+                            <li class=home><a href="/top">HOME</a></li>
+                            <li class=profile><a href="/profile">プロフィール編集</a></li>
+                            <li class=logout><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="/storage/{{Auth::user()->images}}" class="user-icon">
             </div>
-        </div>
     </header>
     <div id="row">
         <div id="container">
@@ -47,16 +45,16 @@
                 <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->follows->count()}}名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn follow-list"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->followers->count()}}名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn follower-list"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn search"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>

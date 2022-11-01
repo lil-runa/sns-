@@ -91,10 +91,10 @@ class RegisterController extends Controller
     ->withErrors($validator)
     ->withInput();
   } else {
-    return view('RegisterController.create');
-  }
             $this->create($data);
             return redirect('added');
+  }
+
         }
         return view('auth.register');
     }

@@ -4,10 +4,28 @@ html {}
 
 body {}
 
+
 /* header */
 header {
+    height: 90px;
     background: #186AC9;
 }
+
+.atlas {
+    position: absolute;
+    width: 100%;
+
+}
+
+.atlas-icon {
+    position: absolute;
+    width: 120px;
+    left: 15px;
+    top: 20px;
+}
+
+
+
 
 /* main content */
 #row {
@@ -16,7 +34,7 @@ header {
 }
 
 #container {
-    flex: 0 0 80%;
+    flex: 10 10 80%;
 }
 
 #side-bar {
@@ -24,56 +42,76 @@ header {
     border-left: 1px solid #727272;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.username {
+    color: #fff;
+    position: absolute;
+    padding: 0.4em 20px 0 0;
+}
+
+.user-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    margin: 0 5px 0 5px;
+}
+
 .accordion {
     position: relative;
-    width: 450px;
-    left: 350px;
+    left: 0;
+    width: 250px;
+    top: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 20px 0 5px;
 }
 
 .accordion-container {
-    position: relative;
+    position: absolute;
     width: 100%;
     padding: 10px;
     border: 1px solid #0079c1;
     border-top: none;
     outline: 0;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .accordion-container .accordion-title {
+    position: absolute;
     display: block;
-    position: relative;
-    margin: 0;
-    padding: 0.625em 0.625em 0.625em 2em;
     font-size: 1.25em;
-    font-weight: normal;
-    color: #fff;
+    font-weight: bold;
     background: #000;
     cursor: pointer;
+    margin: 0 10px;
+
 }
 
 .accordion-container .accordion-title:hover,
 .accordion-container .accordion-title:active,
 .accordion-container .content-entry.open .accordion-title {
-    background-color: #00aaa7;
-    color: white;
+
+    font-weight: bold;
 }
 
-.accordion-container .accordion-title:hover i:before,
+/*.accordion-container .accordion-title:hover i:before,
 .accordion-container .accordion-title:hover i:active,
 .accordion-container .content-entry.open i {
     color: white;
-}
+}*/
 
-.accordion-title {
-    position: relative;
-}
+
 
 .accordion-title:after {
     content: "";
     position: absolute;
-    right: 25px;
-    top: 38%;
+    right: 80px;
+    top: 10px;
     transition: all 0.2s ease-in-out;
     display: block;
     width: 8px;
@@ -87,16 +125,288 @@ header {
 .accordion-title.open:after {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: 45%;
+    top: 10px;
 }
 
 .accordion-content {
+    position: absolute;
+    left: -24px;
+    top: 55px;
     display: none;
-    padding-left: 2.3125em;
+    width: 100%;
+}
+
+.accordion-content ul {
+    overflow: hidden;
+    width: 300px;
+    height: auto;
+}
+
+.accordion-content li {
+    display: flex;
+    height: 80px;
+    text-align: center;
+    border: solid 3px #191970;
+    white-space: nowrap;
+
+}
+
+.home {
+    justify-content: center;
+}
+
+.home a {
+    width: 100%;
+    font-size: 30px;
+    font-weight: lighter;
+    background-color: #fff;
+    color: #727272;
+}
+
+.profile a {
+    width: 100%;
+    font-size: 30px;
+    font-weight: lighter;
+    background-color: #191970;
+    color: #fff;
+}
+
+.logout a {
+    width: 100%;
+    font-size: 30px;
+    font-weight: lighter;
+    background-color: #fff;
+    color: #727272;
 }
 
 /* CSS for CodePen */
 .accordion-container {
-    width: 300px;
+    width: 10px;
     margin: 1.875em auto;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-control {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 160px;
+}
+
+.btn-success.pull-right {
+    position: absolute;
+    width: 100px;
+    right: 100px;
+    bottom: 15px;
+}
+
+/*.card-content {
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 1px black;
+    width: 100%;
+}*/
+
+
+.card-content {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.card-content ul {
+    left: 20px;
+    border-bottom: solid 1px black;
+    overflow: hidden;
+    padding: 10px;
+    height: auto;
+}
+
+.card-content li {
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+.li-name {
+    margin-bottom: 10px;
+    margin-left: 80px;
+    font-weight: bold;
+}
+
+.li-post {
+    margin-left: 80px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.li-time {
+    font-size: small;
+}
+
+.post-content {
+    width: 100%;
+    padding: 15px;
+}
+
+.post-content>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    position: relative;
+}
+
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.modal_post {
+    height: 200px;
+    width: 100%;
+}
+
+.js-modal-open {
+    position: absolute;
+    right: 100px;
+    bottom: 15px;
+    width: 50px;
+}
+
+.edit-img {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 40px;
+}
+
+.trash-img {
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+    width: 50px;
+}
+
+.search-area {
+    position: relative;
+}
+
+.search-form {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 160px;
+}
+
+.search-control {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    top: 40px;
+    left: 50px;
+
+}
+
+.search-btn {
+    position: absolute;
+    width: 50px;
+    top: 45px;
+    left: 480px;
+}
+
+.search-word {
+    position: absolute;
+    left: 700px;
+    top: 65px;
+    font-size: 28px;
+}
+
+.btn {
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2.5;
+    vertical-align: middle;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: #186AC9;
+    text-decoration: none;
+    font-size: 1rem;
+    width: 130px;
+    padding: 2px 10px;
+}
+
+.follow-list a {
+    color: #fff;
+}
+
+.follow-list a:visited {
+    color: #fff;
+}
+
+.follower-list a {
+    color: #fff;
+}
+
+.search a {
+    color: #fff;
+}
+
+/*.follow-list a:visited,
+.follow-list a:link,
+.follower-list a:visited,
+.follower-list a:link,
+.search a:visited,
+.search a:link {
+    color: white;
+}*/
+
+/*プロフィール編集*/
+
+.profile-edit {
+    display: block;
+
+}
+
+.form-profile {
+    display: flex;
+    margin: 40px;
+
+}
+
+.form-profileEdit {
+    width: 400px;
+    height: 40px;
+    margin: 0 0 0 40px;
 }

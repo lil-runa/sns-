@@ -35,6 +35,9 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/top','PostsController@index')->middleware('auth');
 
 Route::get('/profile','UsersController@profile');
+
+//Route::get('users/{id}/otherProfile', 'UsersController@userProfile');
+Route::get('users/{id}/otherProfile', 'FollowsController@otherPost');
 //プロフィール編集
 Route::put('/top', 'UsersController@profileUpdate')->name('profile_edit');
 

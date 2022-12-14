@@ -33,7 +33,7 @@
                         </ul>
                     </div>
                 </div>
-                <img src="/storage/{{Auth::user()->images}}" class="user-icon">
+                <img src="{{ asset('storage/images/' . Auth::user()->images) }}" class="user-icon">
             </div>
     </header>
     <div id="row">
@@ -42,13 +42,13 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{ Auth::user()->username }}さんの</p>
-                <div>
-                <p>フォロー数</p>
+                <p class="side-username">{{ Auth::user()->username }}さんの</p>
+                <div class="follow-count">
+                <p >フォロー数</p>
                 <p>{{Auth::user()->follows->count()}}名</p>
                 </div>
                 <p class="btn follow-list"><a href="/follow-list">フォローリスト</a></p>
-                <div>
+                <div class="follower-count">
                 <p>フォロワー数</p>
                 <p>{{Auth::user()->followers->count()}}名</p>
                 </div>

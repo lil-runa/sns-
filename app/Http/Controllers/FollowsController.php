@@ -17,7 +17,6 @@ class FollowsController extends Controller
         $following_id = Auth::user()->follows()->pluck('followed_id');
         $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
         $users = User::whereIn('id',$following_id)->get();
-
         return view('follows.followList',compact('posts','users'));
     }
     public function followerList(){
@@ -25,6 +24,14 @@ class FollowsController extends Controller
         $posts = Post::with('user')->whereIn('user_id', $followed_id)->get();
         $users = User::whereIn('id',$followed_id)->get();
         return view('follows.followerList',compact('posts','users'));
+    }
+
+    public function otherPost($id){
+        $user = \DB::table('users')
+            ->where('id', $id)
+            ->get();
+        $post = Post::with('user')->where('user_id', $id)->get();
+        return view('users.userprofile',compact('user','post'));
     }
 
     //public function index(User $user)

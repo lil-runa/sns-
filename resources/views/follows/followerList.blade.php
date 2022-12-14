@@ -6,7 +6,7 @@
     <h2>Follower List</h2>
     @foreach ($users as $user)
     <div class=followList-area>
-     <p>{{$user->username}}</p>
+     <a href="/users/{{ $user->id }}/otherProfile"><img src="{{ asset('storage/images/' . $user->images)}}" ></a>
     </div>
     @endforeach
   </head>

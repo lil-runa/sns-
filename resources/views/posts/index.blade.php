@@ -9,6 +9,7 @@
       @csrf
       @method('POST')
         <div class="form-group">
+          <img src="{{ asset('storage/images/' . Auth::user()->images) }}" class="form-icon">
             {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください']) !!}
             @if ($errors->has('post'))
     @foreach($errors->get('post') as $error)
@@ -28,10 +29,9 @@
             <ul>
                 <li>
                   <div class="post-content">
-                  <div>
+                    <img src="{{ 'storage/images/' . $lists->images}}" class=li-icon>
                   <div class=li-name>{{ $lists->username}}</div>
                   <div class="li-time">{{ $lists->created_at }}</div>
-                  </div>
                   <div class="li-post">{{ $lists->post }}</div>
                   </div>
                 </li>

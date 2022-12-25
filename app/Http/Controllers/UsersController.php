@@ -66,7 +66,8 @@ class UsersController extends Controller
     }
 
     public function index(Request $request) {
-      $users = User::paginate(20);
+      $users = User::where("id" , "!=" , Auth::user()->id)->paginate(10);
+
 
       $search = $request -> input('search');
       $query = User::query();

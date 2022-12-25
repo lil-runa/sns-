@@ -4,12 +4,14 @@
 
 {!! Form::open(['action' => 'Auth\LoginController@login' , 'method' => 'post']) !!}
 
-<div>
+<div class="form-login">
 <p class="welcome">AtlasSNSへようこそ</p>
 
-<div class="input">
+<div class="login-area">
 {{ Form::label('mail adress') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
+</div>
+<div class="login-area">
 {{ Form::label('password') }}
 {{ Form::password('password',['class' => 'input']) }}
 </div>
@@ -18,7 +20,7 @@
 {{ Form::submit('LOGIN' ,['class'=>'login']) }}
 </div>
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+<p><a href="/register" class="a-register">新規ユーザーの方はこちら</a></p>
 @csrf
 
 {!! Form::close() !!}

@@ -30,16 +30,18 @@
                 <li>
                   <div class="post-content">
                     <img src="{{ 'storage/images/' . $lists->images}}" class=li-icon>
-                  <div class=li-name>{{ $lists->username}}</div>
+                  <div class="li-name">{{ $lists->username}}</div>
                   <div class="li-time">{{ $lists->created_at }}</div>
                   <div class="li-post">{{ $lists->post }}</div>
                   </div>
                 </li>
             </ul>
+            @if ($lists->id == Auth::user()->id)
             <div class="content">
                             <a class="js-modal-open"  post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" class="edit-img"></a>
                             <a class="btn-danger" href="/post/{{ $lists->id }}/top" onclick="return confirm('投稿を削除しますか？')"><img src="images/trash-h.png" class="trash-img"></a>
-                            </div>
+            </div>
+            @endif
             @endforeach
             <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>

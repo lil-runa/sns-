@@ -3,6 +3,7 @@
 @section('content')
 <body>
   <head>
+    <div class="container">
   <div class="follow-area">
     <h2>Follow List</h2>
     @foreach ($users as $user)
@@ -11,15 +12,25 @@
     </div>
     @endforeach
   </div>
+  </div>
   </head>
 
-  <div class=followPost>
+  <div class="card-content">
+
     @foreach ($posts as $post)
-    <img src="{{ 'storage/images/' . $post->images}}" class=li-icon>
-    <p>{{$post->username}}</p>
-    <p>{{$post->post}}</p>
+    <ul>
+        <li>
+              <div class="post-content">
+    <img src="{{ 'storage/images/' . $post->user->images}}" class=li-icon>
+    <div class="li-name">{{ $post->user->username}}</div>
+    <div class="li-time">{{ $post->created_at }}</div>
+    <div class="li-post">{{ $post->post }}</div>
+           </div>
+         </li>
+     </ul>
+
     @endforeach
-  </div>
+</div>
 
 </body>
 

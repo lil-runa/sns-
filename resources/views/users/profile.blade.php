@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="profile-edit">
+    <img src="{{ asset('storage/images/' . Auth::user()->images) }}" class="profile-icon">
    {!! Form::open(['route' => ['profile_edit'], 'method' => 'PUT','files' => true]) !!}
             {!! Form::hidden('id',$user->id) !!}
-                <div class="form-profile up1">
+                <div class="form-profile">
                     <div class="form-profile-group">
                     {{Form::label('username')}}
                     {{Form::text('username', $user->username, ['class' => 'form-profileEdit', 'id' =>'username'])}}
@@ -16,9 +17,11 @@
                         @endforeach</span>
                         @endif
                 </div>
-                <div class="form-profile up2">
+                <div class="form-profile">
+                    <div class="form-profile-group">
                     {{Form::label('mail','mail address')}}
                     {{Form::email('mail', $user->mail, ['class' => 'form-profileEdit', 'id' =>'mail'])}}
+                    </div>
                     <span class="text-danger">
                         @if ($errors->has('mail'))
                         @foreach($errors->get('mail') as $error)
@@ -27,9 +30,11 @@
                         @endif
                     </span>
                 </div>
-                <div class="form-profile up3">
+                <div class="form-profile">
+                    <div class="form-profile-group">
                     {{Form::label('password','password')}}
                     {{Form::text('password',null, ['class' => 'form-profileEdit', 'id' =>'password'])}}
+                    </div>
                     <span class="text-danger">
                         @if ($errors->has('password'))
                         @foreach($errors->get('password') as $error)
@@ -38,22 +43,33 @@
                         @endif
                     </span>
                 </div>
-                <div class="form-profile up4">
+                <div class="form-profile">
+                    <div class="form-profile-group">
                     {{Form::label('password_confirmation','password confirm')}}
                     {{Form::text('password_confirmation', null, ['class' => 'form-profileEdit', 'id' =>'password_confirm'])}}
+                    </div>
                     <span class="text-danger">{{$errors->first('password')}}</span>
                 </div>
-                 <div class="form-profile up5">
+                 <div class="form-profile">
+                    <div class="form-profile-group">
                     {{Form::label('bio','bio')}}
                     {{Form::text('bio', $user->bio, ['class' => 'form-profileEdit', 'id' =>'bio'])}}
+                    </div>
                     <span class="text-danger">{{$errors->first('bio')}}</span>
                 </div>
-                <div class="form-profile up6">
+                <div class="form-profile">
+                    <div class="form-profile-group">
                     {{Form::label('icon')}}
-                    {{Form::file('icon',  ['class' => 'form-profileEdit', 'id' =>'image'])}}
+                    <div class="form-profile-group2">
+                    <label class="file">
+                    {{Form::file('icon', ['class' => 'form-profileEdit', 'id' =>'image'])}}
+                    ファイルを選択
+                    </label>
+                    </div>
+                    </div>
                 </div>
                 <div class="form-group pull-right">
-                    {{Form::submit(' 更新する ', ['class'=>'btn pEit'])}}
+                    {{Form::submit(' 更新 ', ['class'=>'btn-pEdit'])}}
                 </div>
 
             {!! Form::close() !!}

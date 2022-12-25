@@ -4,35 +4,42 @@
 @section('content')
 <body>
   <head>
-    @foreach ($user as $users)
-     <img src="{{asset('storage/images/' . $users->images)}}" >
-     <div class="otherName">name  {{ $users->username }}</div>
-     <div class="otherBio">bio  {{ $users->bio }}</div>
-     @endforeach
-     @if ($users->id != auth()->user()->id)
-            @if (auth()->user()->isFollowing($users->id))
-                <form action="{{ route('unfollow', ['id' => $users->id]) }}" method="POST">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+    <div class="user-profile">
+        @foreach ($user as $users)
+        <img src="{{asset('storage/images/' . $users->images)}}" class="p-icon">
+        <div class="otherName">
+          <label>name</label>
+            <div class="p-name">{{ $users->username }}</div>
+        </div>
+        <div class="otherBio">
+          <label>bio</label>
+           <div class="p-bio">{{ $users->bio }}</div>
+        </div>
+        @endforeach
+        @if (auth()->user()->isFollowing($users->id))
+          <form action="{{ route('unfollow', ['id' => $users->id]) }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
 
-                    <button type="submit" class="btn-danger">フォロー解除</button>
-                </form>
-            @else
-                <form action="{{ route('follow', ['id' => $users->id]) }}" method="POST">
-                    {{ csrf_field() }}
+            <button type="submit" class="btn-danger">フォロー解除</button>
+          </form>
+        @else
+          <form action="{{ route('follow', ['id' => $users->id]) }}" method="POST">
+            {{ csrf_field() }}
 
-                    <button type="submit" class="btn-primary">フォローする</button>
-                </form>
-            @endif
-            @endif
+            <button type="submit" class="btn-primary">フォローする</button>
+          </form>
+        @endif
+    </div>
   </head>
 
-  <div>
+  <div class="card-content">
     @foreach ($post as $posts)
      <div><ul>
                 <li>
                   <div class="post-content">
-                  <div class=li-name>{{ $posts->username}}</div>
+                    <img src="{{asset('storage/images/' . $users->images)}}" class=li-icon>
+                  <div class=li-name>{{ $users->username}}</div>
                   <div class="li-time">{{ $posts->created_at }}</div>
                   <div class="li-post">{{ $posts->post }}</div>
                   </div>

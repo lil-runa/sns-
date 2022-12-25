@@ -13,19 +13,31 @@ img {
 
 body {
 
-    height: 100vh;
+    height: auto;
     background: linear-gradient(#1e90ff, 70%, #f0e68c);
 }
 
-.input {
-    height: 30px;
-    width: 250px;
-    text-align: left;
-    margin: 10px auto;
-    border-radius: 5px 5px 5px 5px;
+label {
+    color: #fff;
 }
 
-form {
+input {
+    height: 30px;
+    width: 250px;
+    margin: 10px auto;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid;
+}
+
+input[type="file"] {
+    text-align: center;
+}
+
+.login-area {
+    margin: 10px 40px;
+}
+
+.form-login {
     position: absolute;
     top: 200px;
     left: 600px;
@@ -55,7 +67,7 @@ p {
     left: 35%;
 }
 
-a {
+.a-register {
     position: absolute;
     top: 350px;
     right: 60px;
@@ -69,8 +81,56 @@ a {
     position: absolute;
     top: 250px;
     left: 180px;
-    background-color: red;
+    background-color: #ff0461;
     width: 120px;
     height: 40px;
     border-radius: 10px 10px 10px 10px;
+    border: none;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+label {
+    text-transform: lowercase;
+}
+
+.form-register {
+    position: absolute;
+    top: 160px;
+    left: 600px;
+    width: 340px;
+    height: 570px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.a-login {
+    position: absolute;
+    top: 500px;
+    right: 80px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.register-area {
+    margin: 10px 40px;
+}
+
+.register {
+    font-size: 19px;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    top: 420px;
+    left: 160px;
+    background-color: #ff0461;
+    width: 140px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
 }

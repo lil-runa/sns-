@@ -21,7 +21,7 @@
 </head>
 <body>
     <header class="header">
-        <h1><a href="/top" class=atlas><img src="images/atlas.png" class=atlas-icon></a></h1>
+        <h1><a href="/top" class=atlas><img src="{{asset('/images/atlas.png')}}" class=atlas-icon></a></h1>
                 <div  class=accordion class="accordion-container">
                     <h4 class="accordion-title js-accordion-title"><p class=username>{{ Auth::user()->username }}さん</p></h4>
                     <div class=accordion-content>
@@ -58,6 +58,6 @@
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

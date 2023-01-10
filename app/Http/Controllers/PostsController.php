@@ -16,8 +16,6 @@ class PostsController extends Controller
     //
     public function index(){
 
-        $list = Post::get();
-
         $list = User::select()
         ->join('posts','users.id','=','posts.user_id')
         ->latest('posts.created_at')

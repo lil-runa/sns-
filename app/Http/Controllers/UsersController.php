@@ -29,10 +29,12 @@ class UsersController extends Controller
         'username' => 'required|string|min:2,max:12',
         'mail' => 'required|string|email|min:5,max:40',
         'password' => 'required|string|alpha_num|min:8,max:20|confirmed',
+        'bio' => 'max:150',
     ], [
         'username' => '2文字以上12文字以内',
             'mail' => '正しくありません',
             'password' => '英数字のみ　8から20字',
+            'bio' => '150字以内',
     ]);
 
             $user->username = $request->input('username');

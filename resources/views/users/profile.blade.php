@@ -33,7 +33,7 @@
                 <div class="form-profile">
                     <div class="form-profile-group">
                     {{Form::label('password','password')}}
-                    {{Form::text('password',null, ['class' => 'form-profileEdit', 'id' =>'password'])}}
+                    {{Form::password('password',null, ['class' => 'form-profileEdit', 'id' =>'password',])}}
                     </div>
                     <span class="text-danger">
                         @if ($errors->has('password'))
@@ -46,16 +46,27 @@
                 <div class="form-profile">
                     <div class="form-profile-group">
                     {{Form::label('password_confirmation','password confirm')}}
-                    {{Form::text('password_confirmation', null, ['class' => 'form-profileEdit', 'id' =>'password_confirm'])}}
+                    {{Form::password('password_confirmation', null, ['class' => 'form-profileEdit', 'id' =>'password_confirm'])}}
                     </div>
-                    <span class="text-danger">{{$errors->first('password')}}</span>
+                    <span class="text-danger">
+                        @if ($errors->has('password'))
+                        @foreach($errors->get('password') as $error)
+                        {{'※英数字のみ　8から20字'}}<br>
+                        @endforeach
+                        @endif</span>
                 </div>
                  <div class="form-profile">
                     <div class="form-profile-group">
                     {{Form::label('bio','bio')}}
                     {{Form::text('bio', $user->bio, ['class' => 'form-profileEdit', 'id' =>'bio'])}}
                     </div>
-                    <span class="text-danger">{{$errors->first('bio')}}</span>
+                    <span class="text-danger">
+                        @if ($errors->has('bio'))
+                        @foreach($errors->get('bio') as $error)
+                        {{'※150字以内'}}<br>
+                        @endforeach
+                        @endif
+                    </span>
                 </div>
                 <div class="form-profile">
                     <div class="form-profile-group">

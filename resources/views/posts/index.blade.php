@@ -36,10 +36,10 @@
                   </div>
                 </li>
             </ul>
-            @if ($lists->id == Auth::user()->id)
+            @if ( $lists->user_id == Auth::id())
             <div class="content">
                             <a class="js-modal-open"  post="{{ $lists->post }}" post_id="{{ $lists->id }}"><img src="images/edit.png" class="edit-img"></a>
-                            <a class="btn-danger" href="/post/{{ $lists->id }}/top" onclick="return confirm('投稿を削除しますか？')"><img src="images/trash-h.png" class="trash-img"></a>
+                            <a class="btn-trash" href="/post/{{ $lists->id }}/top" onclick="return confirm('投稿を削除しますか？')"><img src="images/trash-h.png" class="trash-img"></a>
             </div>
             @endif
             @endforeach

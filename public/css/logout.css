@@ -54,10 +54,7 @@ div {
 }
 
 p {
-    font-size: 1.4rem;
     color: white;
-    text-align: center;
-    padding: 30px;
 }
 
 .social {
@@ -65,6 +62,9 @@ p {
     font-size: 2.3rem;
     top: 95px;
     left: 35%;
+    color: white;
+    text-align: center;
+    padding: 30px;
 }
 
 .a-register {
@@ -133,4 +133,58 @@ label {
     height: 40px;
     border-radius: 10px 10px 10px 10px;
     border: none;
+}
+
+#clear {
+    position: absolute;
+    top: 180px;
+    left: 600px;
+    width: 340px;
+    height: 350px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-text {
+    position: absolute;
+    top: 50px;
+    left: 30%;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.completion {
+    font-size: 1.0em;
+    margin: 10px 0px 0px 60px;
+    padding: 0px;
+}
+
+.btn {
+    position: absolute;
+    top: 250px;
+    right: 90px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #ff0461;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+    padding: 15px;
+}
+
+.welcome-atlas {
+    margin: 70px 0px 40px 70px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.loginScreen a {
+    color: #fff;
+    margin: 10px 20px;
+}
+
+.welcome {
+    margin: 30px 70px;
+    font-size: 1.2em;
 }

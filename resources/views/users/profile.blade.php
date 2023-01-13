@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-profile">
                     <div class="form-profile-group">
-                    {{Form::label('mail','mail address')}}
+                    {{Form::label('mail address')}}
                     {{Form::email('mail', $user->mail, ['class' => 'form-profileEdit', 'id' =>'mail'])}}
                     </div>
                     <span class="text-danger">
@@ -32,8 +32,8 @@
                 </div>
                 <div class="form-profile">
                     <div class="form-profile-group">
-                    {{Form::label('password','password')}}
-                    {{Form::password('password',null, ['class' => 'form-profileEdit', 'id' =>'password',])}}
+                    {{Form::label('password')}}
+                    {{Form::password('password', ['class' => 'form-profileEdit', 'id' =>'password'])}}
                     </div>
                     <span class="text-danger">
                         @if ($errors->has('password'))
@@ -45,8 +45,8 @@
                 </div>
                 <div class="form-profile">
                     <div class="form-profile-group">
-                    {{Form::label('password_confirmation','password confirm')}}
-                    {{Form::password('password_confirmation', null, ['class' => 'form-profileEdit', 'id' =>'password_confirm'])}}
+                    {{Form::label('password confirm')}}
+                    {{Form::password('password_confirmation', ['class' => 'form-profileEdit', 'id' =>'password_confirm'])}}
                     </div>
                     <span class="text-danger">
                         @if ($errors->has('password'))

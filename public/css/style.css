@@ -347,7 +347,7 @@ input::placeholder {
 
 .li-time {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 80px;
     font-size: small;
 }
@@ -364,7 +364,7 @@ input::placeholder {
 }
 
 .content {
-    position: relative;
+    padding-top: 10px;
 }
 
 .modal {
@@ -409,6 +409,7 @@ input::placeholder {
     right: 5px;
     bottom: 5px;
     width: 40px;
+    padding-top: 10px;
 }
 
 .trash-img {
@@ -416,6 +417,7 @@ input::placeholder {
     right: 50px;
     bottom: 15px;
     width: 50px;
+    padding-top: 10px;
 }
 
 .search-area {

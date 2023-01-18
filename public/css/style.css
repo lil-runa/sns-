@@ -40,7 +40,7 @@ header {
 }
 
 #container {
-    flex: 10 10 80%;
+    flex: 10 10 70%;
     background-color: #fff;
     border-bottom: 8px solid #dddddd;
 }
@@ -313,7 +313,7 @@ input::placeholder {
     border-bottom: solid 1px #aaa;
     overflow: hidden;
     padding: 10px;
-    height: auto;
+    height: 12vh;
 }
 
 .card-content li {
@@ -347,7 +347,7 @@ input::placeholder {
 
 .li-time {
     position: absolute;
-    top: 15px;
+    top: 11px;
     right: 80px;
     font-size: small;
 }
